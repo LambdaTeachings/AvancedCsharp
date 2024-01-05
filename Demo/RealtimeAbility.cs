@@ -9,7 +9,7 @@
             _lastUse = DateTime.Now;
         }
 
-        public override bool TryUse()
+        public sealed override bool TryUse()
         {
             _countDown = (float)Cooldown - (float)(DateTime.Now - _lastUse).TotalSeconds;
             var ret = base.TryUse();
